@@ -142,7 +142,7 @@ if [ "x$skip_native_build" != "xyes" ] ; then
     rm -rf $BUILDDIR_NATIVE/gmp && mkdir -p $BUILDDIR_NATIVE/gmp
     pushd $BUILDDIR_NATIVE/gmp
 
-    CPPFLAGS="-fexceptions" $SRCDIR/$GMP/configure --build=$BUILD \
+    CPPFLAGS="-fexceptions" $SRCDIR/$GMP/configure CC=c99 --build=$BUILD \
         --host=$HOST_NATIVE \
         --prefix=$BUILDDIR_NATIVE/host-libs/usr \
         --enable-cxx \
@@ -278,7 +278,7 @@ echo Task [II-2] /$HOST_MINGW/gmp/ | tee -a "$BUILDDIR_MINGW/.stage"
 rm -rf $BUILDDIR_MINGW/gmp && mkdir -p $BUILDDIR_MINGW/gmp
 pushd $BUILDDIR_MINGW/gmp
 
-$SRCDIR/$GMP/configure --build=$BUILD \
+$SRCDIR/$GMP/configure CC=c99 --build=$BUILD \
     --host=$HOST_MINGW \
     --prefix=$BUILDDIR_MINGW/host-libs/usr \
     --disable-shared \

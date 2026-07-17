@@ -1,3 +1,14 @@
+# Archlinux Modifications
+
+Modified to work on Arch Linux 7.0.14-arch1-1. Built using the following commands in arch:
+
+```
+$ ./build-prerequisites.sh --skip_steps=mingw 
+$ ./build-toolchain.sh --build_type=native --skip_steps=mingw,mingw-gdb-with-python 
+```
+
+Built binares compressed into archive kept in [archive](archive/).
+
 # GNU Tools for STM32
 
 This repository contains sources and build scripts for **GNU Tools for STM32** C/C++ bare-metal toolchain included into [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) advanced development platform and part of the [STM32Cube](https://www.st.com/en/ecosystems/stm32cube.html) software ecosystem. It is based on [ARM GNU Toolchain](https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain) sources, with patches improving use in embedded systems.

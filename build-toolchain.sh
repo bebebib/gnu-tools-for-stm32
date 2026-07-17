@@ -86,7 +86,7 @@ if [ $# -gt 3 ] ; then
 fi
 
 skip_mingw32=no
-BUILD_OPTIONS="-g -O2"
+BUILD_OPTIONS="-g -O2 -std=gnu++11"
 is_ppa_release=no
 is_native_build=yes
 is_debug_build=no
@@ -508,7 +508,7 @@ if [ "x$skip_native_build" != "xyes" ] ; then
         "--with-pkgversion=$PKGVERSION" \
         ${MULTILIB_LIST}
 
-    make -j$JOBS CCXXFLAGS="$BUILD_OPTIONS" \
+    make -j$JOBS CXXFLAGS="$BUILD_OPTIONS" \
             LDFLAGS_FOR_TARGET="--specs=nosys.specs" \
             CXXFLAGS_FOR_TARGET="-g -Os -ffunction-sections -fdata-sections -fno-exceptions"
     make install
@@ -559,7 +559,7 @@ if [ "x$skip_native_build" != "xyes" ] ; then
             '--with-gdb-datadir='\''${prefix}'\''/arm-none-eabi/share/gdb' \
             "--with-pkgversion=$PKGVERSION"
 
-        make -j$JOBS
+        make -j$JOBS CFLAGS="-std=gnu99" CXXFLAGS="-std=gnu++17"
 
         make install
 
