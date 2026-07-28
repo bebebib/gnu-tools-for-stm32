@@ -9,6 +9,12 @@ $ ./build-toolchain.sh --build_type=native --skip_steps=mingw,mingw-gdb-with-pyt
 
 Built binares compressed into archive kept in [archive](archive/).
 
+# Mac modifications
+
+Install texinfo, autoreconf, aclocal, automake, libtool, gcc, basictex with brew.
+
+Skip manual step since I could not get tex pdf tools working. Had to build gdb separately as well and manually include it in the tools.
+
 # GNU Tools for STM32
 
 This repository contains sources and build scripts for **GNU Tools for STM32** C/C++ bare-metal toolchain included into [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) advanced development platform and part of the [STM32Cube](https://www.st.com/en/ecosystems/stm32cube.html) software ecosystem. It is based on [ARM GNU Toolchain](https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain) sources, with patches improving use in embedded systems.

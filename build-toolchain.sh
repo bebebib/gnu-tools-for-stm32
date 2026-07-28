@@ -86,7 +86,7 @@ if [ $# -gt 3 ] ; then
 fi
 
 skip_mingw32=no
-BUILD_OPTIONS="-g -O2 -std=gnu++11"
+BUILD_OPTIONS="-g -O2"
 is_ppa_release=no
 is_native_build=yes
 is_debug_build=no
